@@ -32,3 +32,6 @@ Spec-Driven Development, reglas de equipo, hooks que las hacen cumplir y tooling
 ## Flujo
 
 Spec → Clarificación → Plan y tareas → Implementación (una tarea por vez, rama `feat/NNN-nombre`) → Validación → PR a `main`.
+## Autor
+
+Leandro — plantilla de mi equipo de agentes para proyectos Python.
