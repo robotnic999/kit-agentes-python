@@ -42,6 +42,7 @@
 - Tests: `uv run pytest`
 - Lint y formato: `uv run ruff check .` y `uv run ruff format .`
 - Tipos: `uv run mypy`
+<!-- Si aplica: capturas de interfaz, build, instalar en el dispositivo y qué hacer si OneDrive bloquea el build. -->
 
 ## Verificación (la tarea no está terminada sin esto en verde)
 

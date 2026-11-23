@@ -17,7 +17,7 @@ Si la petición es un cambio pequeño que no merece una spec, sugerí usar /feat
 4. **Implementación**: en la primera tarea, @implementer crea la rama `feat/NNN-nombre`. Llamá a @implementer UNA vez por tarea (T1, T2…), en orden. Después de cada tarea comprobá en su respuesta que la verificación de `CLAUDE.md` está en verde; si no, frená y avisale al usuario.
 5. **Validación**: pedile a @reviewer que valide la spec RF por RF.
 6. **Correcciones**: si @reviewer dice CAMBIOS NECESARIOS, volvé a @implementer con la lista exacta y después otra vez a @reviewer. Máximo 2 vueltas; si sigue fallando, frená y explicale al usuario qué pasa.
-7. **Cierre**: resumí qué se hizo, el veredicto de @reviewer y lo pendiente. Recordale al usuario que los cambios entran a `main` por PR desde `feat/NNN-nombre` y que el PR lo revisa y lo mergea él.
+7. **Cierre**: preparale al usuario la entrega con la skill `entrega` (PR y guía de prueba por partes). Resumí qué se hizo, el veredicto de @reviewer y lo pendiente. Recordale al usuario que los cambios entran a `main` por PR desde `feat/NNN-nombre` y que el PR lo revisa y lo mergea él.
 
 ## Cambios de requisitos
 

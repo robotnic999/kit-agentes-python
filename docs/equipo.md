@@ -8,6 +8,7 @@ Spec → Clarificación → Plan y tareas → Implementación (una tarea por vez
 Cambios chicos que no merecen spec: `/feature` (plan → aprobación → implementación).
 Detalle de cada fase: skill `sdd` y agente `coordinator`.
 Codex (OpenAI) ayuda con lo mecánico —borradores, tareas chicas y primera revisión— según la skill `codex`: Codex propone, Claude revisa y decide. Sus reglas para Codex están en `AGENTS.md`.
+Otras skills del kit: `capturas` (cambios de interfaz), `prueba-manual` (dispositivo real), `entrega` (PR y guía de prueba) y `entorno-windows` (CRLF, binarios y OneDrive).
 
 ## ✅ Siempre
 
