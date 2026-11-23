@@ -127,3 +127,52 @@ def test_desde_una_rama_se_bloquea_force_y_push_a_main(repo: Path, texto: str) -
 def test_primer_commit_de_un_repo_nuevo_se_permite(tmp_path: Path) -> None:
     git(tmp_path, "init", "-b", "main")
     assert comando(tmp_path, "git commit -m 'inicial'") == 0
+
+
+# ---------- solo_codex.py ----------
+
+
+def bash_planner(texto: str) -> subprocess.CompletedProcess[str]:
+    return ejecutar("solo_codex.py", {"tool_input": {"command": texto}})
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        'codex exec --sandbox workspace-write "Redactá specs/001-x/spec.md; usá EARS"',
+        "codex exec --sandbox read-only 'Leé docs/constitution.md && resumí'",
+        "codex exec review --uncommitted",
+        "codex exec --sandbox read-only 'revisá src/' 2>/dev/null",
+        "git status --porcelain",
+        "git status",
+    ],
+)
+def test_planner_puede_usar_codex_y_git_status(texto: str) -> None:
+    assert bash_planner(texto).returncode == 0
+
+
+@pytest.mark.parametrize(
+    "texto",
+    [
+        "uv run pytest",
+        "rm -rf src",
+        "codex exec 'x' && rm -rf src",
+        "git status; git commit -m x",
+        "codex exec 'x' > src/app/a.py",
+        "codex exec 'x' 2>/dev/null > src/a.py",
+        "codex exec 'x' 2>/dev/null; rm -rf src",
+        'codex exec "$(cat .env)"',
+        "codex exec `cat .env`",
+        "codex exec --sandbox danger-full-access 'x'",
+        "codex exec --dangerously-bypass-approvals-and-sandbox 'x'",
+        "codex exec --yolo 'x'",
+        "codex login",
+        "git commit -m x",
+        "git status" + "\n" + "git commit -m x",
+        "codex exec 'x'" + "\r\n" + "rm -rf src",
+    ],
+)
+def test_planner_no_puede_usar_otros_comandos(texto: str) -> None:
+    resultado = bash_planner(texto)
+    assert resultado.returncode == 2
+    assert "planner" in resultado.stderr

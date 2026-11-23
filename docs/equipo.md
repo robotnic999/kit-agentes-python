@@ -7,6 +7,8 @@ Valen para todos los proyectos que salen de esta plantilla. Un proyecto puede **
 Spec → Clarificación → Plan y tareas → Implementación (una tarea por vez) → Validación → Cierre.
 Cambios chicos que no merecen spec: `/feature` (plan → aprobación → implementación).
 Detalle de cada fase: skill `sdd` y agente `coordinator`.
+Codex (OpenAI) ayuda con lo mecánico —borradores, tareas chicas y primera revisión— según la skill `codex`: Codex propone, Claude revisa y decide. Sus reglas para Codex están en `AGENTS.md`.
+Otras skills del kit: `capturas` (cambios de interfaz), `prueba-manual` (dispositivo real), `entrega` (PR y guía de prueba) y `entorno-windows` (CRLF, binarios y OneDrive).
 
 ## ✅ Siempre
 
@@ -44,5 +46,6 @@ Estas reglas no dependen de que el agente se acuerde, porque las bloquea un hook
 | Regla | Quién la hace cumplir |
 |---|---|
 | El planner solo escribe en `specs/` | `.claude/hooks/solo_specs.py` |
+| El planner solo usa Bash para Codex (con sandbox) y `git status` | `.claude/hooks/solo_codex.py` |
 | Nada de commits en `main` ni `push --force` | `.claude/hooks/proteger_main.py` |
 | Nadie lee `.env` | `deny` en `.claude/settings.json` |

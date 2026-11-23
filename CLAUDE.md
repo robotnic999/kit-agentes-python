@@ -15,6 +15,7 @@
 - `tests/`: tests con pytest. `tests/kit/` testea los hooks de la plantilla: no borrar.
 - `specs/`: specs SDD (`NNN-nombre/spec.md`, `plan.md`, `tasks.md`).
 - `docs/`: `constitution.md`, `equipo.md` y `adr/` (decisiones de arquitectura).
+- `AGENTS.md`: instrucciones para Codex, que ayuda a los agentes (skill `codex`).
 
 ## Arquitectura
 
@@ -41,6 +42,7 @@
 - Tests: `uv run pytest`
 - Lint y formato: `uv run ruff check .` y `uv run ruff format .`
 - Tipos: `uv run mypy`
+<!-- Si aplica: capturas de interfaz, build, instalar en el dispositivo y qué hacer si OneDrive bloquea el build. -->
 
 ## Verificación (la tarea no está terminada sin esto en verde)
 
