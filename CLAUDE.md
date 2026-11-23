@@ -15,6 +15,7 @@
 - `tests/`: tests con pytest. `tests/kit/` testea los hooks de la plantilla: no borrar.
 - `specs/`: specs SDD (`NNN-nombre/spec.md`, `plan.md`, `tasks.md`).
 - `docs/`: `constitution.md`, `equipo.md` y `adr/` (decisiones de arquitectura).
+- `AGENTS.md`: instrucciones para Codex, que ayuda a los agentes (skill `codex`).
 
 ## Arquitectura
 
