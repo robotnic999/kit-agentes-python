@@ -168,6 +168,8 @@ def test_planner_puede_usar_codex_y_git_status(texto: str) -> None:
         "codex exec --yolo 'x'",
         "codex login",
         "git commit -m x",
+        "git status" + "\n" + "git commit -m x",
+        "codex exec 'x'" + "\r\n" + "rm -rf src",
     ],
 )
 def test_planner_no_puede_usar_otros_comandos(texto: str) -> None:

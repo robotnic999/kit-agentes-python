@@ -27,6 +27,8 @@ FLAGS_PROHIBIDAS = {
 def motivo_de_bloqueo(comando: str) -> str | None:
     """Devuelve por qué se bloquea el comando, o None si está permitido."""
     comando = comando.strip().removesuffix(DESCARTAR_PROGRESO)
+    if "\n" in comando or "\r" in comando:
+        return "el comando tiene que ir en una sola línea"
     if "$(" in comando or "`" in comando:
         return "no se permite sustituir comandos"
     lexer = shlex.shlex(comando, posix=True, punctuation_chars=True)

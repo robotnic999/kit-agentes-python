@@ -27,7 +27,7 @@ Corto y autocontenido, en español, con:
 1. Qué hacer, en una o dos frases.
 2. Las rutas que tiene que leer (no pegues su contenido).
 3. Qué archivos puede tocar y cuáles no.
-4. Sin backticks ni `$(`: el hook del planner bloquea el comando si los ve.
+4. En una sola línea, sin backticks ni `$(`: el hook del planner bloquea el comando si los ve.
 5. Qué tiene que devolver: "Respondé en 5 líneas como máximo: qué archivos cambiaste y qué dudas quedan."
 
 ## Recetas
